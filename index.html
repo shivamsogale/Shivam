@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivam Sogale - RDR2 Portfolio</title>
+
+  <!-- Essential Meta Tags -->
+  <meta name="description" content="Shivam Sogale - Portfolio, Education, Goals, Achievements" />
+  <meta name="author" content="Shivam Dilip Sogale" />
+  <meta property="og:title" content="Shivam Sogale Portfolio" />
+  <meta property="og:description" content="Personal introduction portfolio site of Shivam Sogale." />
+  <meta property="og:image" content="shivam.jpg" />
+  <meta name="theme-color" content="#2e0d0d" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Cinzel', serif;
+      background: radial-gradient(ellipse at center, #4a1c1c 0%, #1a0f0f 100%);
+      color: #f5deb3;
+    }
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeSlideUp 1s forwards;
+    }
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    a:hover {
+      color: #ff6347;
+      transition: color 0.3s ease;
+    }
+    button:hover {
+      background-color: #a52a2a;
+      transition: background-color 0.3s ease;
+    }
+    /* Scroll-to-top button styling */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #8b0000;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: none; /* hidden initially */
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background-color: #a52a2a;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#2e0d0d] border-b-2 border-[#b22222] p-5">
+    <nav class="container mx-auto flex flex-wrap justify-between items-center">
+      <div class="text-3xl font-bold text-white drop-shadow-lg">Shivam Sogale</div>
+
+      <!-- Hamburger button visible only on small screens -->
+      <button id="menu-btn" aria-label="Toggle menu" class="block md:hidden text-[#f5deb3] focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Navigation links -->
+      <ul id="menu" class="hidden w-full md:flex md:w-auto md:flex-row md:gap-6 text-[#f5deb3] font-semibold mt-4 md:mt-0">
+        <li><a href="#welcome" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">Home</a></li>
+        <li><a href="#about" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">About</a></li>
+        <li><a href="#achievements" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">Achievements</a></li>
+        <li><a href="#goals" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">Goals</a></li>
+        <li><a href="#personal" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">Personal</a></li>
+        <li><a href="#contact" class="block px-2 py-1 hover:text-[#ff6347] transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-5 py-10 max-w-4xl">
+
+    <section id="welcome" class="fade-slide-up mb-16" style="animation-delay: 0.2s;">
+      <h2 class="text-4xl mb-4 text-[#ffcc99] drop-shadow-lg">Welcome, Stranger</h2>
+      <p class="mb-4 text-lg font-semibold">Howdy! I'm <strong>SHIVAM DILIP SOGALE</strong>, a developer on a journey through the digital frontier.</p>
+      <img src="shivam.jpg" alt="Photo of Shivam Sogale" class="mx-auto w-36 rounded-full border-4 border-white shadow-lg" />
+      <video controls class="mx-auto mt-6 rounded-lg shadow-lg w-full max-w-md" aria-label="Introduction Video">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="about" class="fade-slide-up bg-[#320000b3] border border-[#8b0000] rounded-xl p-8 mb-16 shadow-lg" style="animation-delay: 0.4s;">
+      <h2 class="text-3xl mb-4 text-[#ffcc99] drop-shadow-lg">About Me</h2>
+      <p><strong>Name:</strong> Shivam Dilip Sogale</p>
+      <p><strong>Location:</strong> At.Post Tandulwadi</p>
+      <p><strong>Education:</strong> Pursuing B.TECH in Electronics and Computer Science</p>
+      <p><strong>Languages:</strong> Marathi, Hindi, and English</p>
+    </section>
+
+    <section id="achievements" class="fade-slide-up bg-[#320000b3] border border-[#8b0000] rounded-xl p-8 mb-16 shadow-lg" style="animation-delay: 0.6s;">
+      <h2 class="text-3xl mb-4 text-[#ffcc99] drop-shadow-lg">My Achievements</h2>
+      <ul id="achievements-list" class="list-disc list-inside text-lg space-y-2">
+        <li>✅ group project: Land rover with soil moisture sensor</li>
+        <li>📜 certification : Anudip and Jetking </li>
+        <li>📜 Course Certification : Data Network, Unix sequential Digital circuits, Basic of c++</li>
+      </ul>
+    </section>
+
+    <section id="goals" class="fade-slide-up bg-[#320000b3] border border-[#8b0000] rounded-xl p-8 mb-16 shadow-lg" style="animation-delay: 0.8s;">
+      <h2 class="text-3xl mb-4 text-[#ffcc99] drop-shadow-lg">Goals</h2>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>🌵 I aim to become a skilled person</li>
+        <li>⚙️ I aim to crack an internship</li>
+        <li>🤠 Crack a good placement</li>
+      </ul>
+    </section>
+
+    <section id="personal" class="fade-slide-up bg-[#320000b3] border border-[#8b0000] rounded-xl p-8 mb-16 shadow-lg" style="animation-delay: 1s;">
+      <h2 class="text-3xl mb-4 text-[#ffcc99] drop-shadow-lg">Personal Info</h2>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>🎮 <strong>Hobbies:</strong> Gaming, swimming</li>
+        <li>🧠 <strong>Role Models:</strong> Elon Musk</li>
+        <li>📘 <strong>Favourite Book:</strong> Rich Dad Poor Dad</li>
+        <li>🌐 <strong>Favourite Website:</strong> ChatGPT</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-slide-up bg-[#320000b3] border border-[#8b0000] rounded-xl p-8 mb-16 shadow-lg" style="animation-delay: 1.2s;">
+      <h2 class="text-3xl mb-4 text-[#ffcc99] drop-shadow-lg">Contact Me</h2>
+
+      <ul class="text-lg space-y-3 max-w-md mx-auto text-left">
+        <li>📞 Phone: <a href="tel:+917448002268" class="underline hover:text-[#ff6347]">+91 74480 02268</a></li>
+        <li>💬 WhatsApp: <a href="https://wa.me/917448002268" target="_blank" rel="noopener" class="underline hover:text-[#ff6347]">Chat with me</a></li>
+        <li>✉️ Email: <a href="mailto:shivamsogale@gmail.com" class="underline hover:text-[#ff6347]">shivamsogale@gmail.com</a></li>
+        <li>🔗 Socials: 
+          <a href="https://instagram.com/_shivam_sogale_" target="_blank" rel="noopener" class="underline hover:text-[#ff6347]">Instagram</a> | 
+          <a href="https://www.linkedin.com/in/shivam-sogale-a54904321/" target="_blank" rel="noopener" class="underline hover:text-[#ff6347]">LinkedIn</a> | 
+          <a href="https://github.com/shivamsogale" target="_blank" rel="noopener" class="underline hover:text-[#ff6347]">GitHub</a>
+        </li>
+      </ul>
+
+      <!-- Message Form -->
+      <form id="contact-form" class="mt-6 flex flex-col max-w-md mx-auto">
+        <input type="text" name="name" placeholder="Your Name" required class="mb-3 p-3 rounded border border-[#8b0000]" />
+        <input type="email" name="email" placeholder="Your Email" required class="mb-3 p-3 rounded border border-[#8b0000]" />
+        <textarea name="message" placeholder="Your Message" required rows="4" class="mb-3 p-3 rounded border border-[#8b0000]"></textarea>
+        <button type="submit" class="bg-[#8b0000] text-white rounded px-5 py-3 font-semibold hover:bg-[#a52a2a]">Send</button>
+      </form>
+
+      <!-- Google Map Embed (Bottom of Contact) -->
+      <div class="mt-10 w-full h-64 rounded-lg overflow-hidden shadow-lg border border-[#8b0000]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120617.84492811056!2d72.81325789269333!3d19.711983699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be710e5f5b7f18f%3A0xd73e81bb7f6f15a2!2sTandulwadi%2C%20Maharashtra%20401404!5e0!3m2!1sen!2sin!4v1716279272959!5m2!1sen!2sin"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Map showing Tandulwadi, Palghar, Maharashtra"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">↑ Top</button>
+
+  <script>
+    // Hamburger menu toggle for mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Scroll to top button functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Optional: Form submission handler (just prevents default for now)
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thanks for reaching out! I will get back to you soon.');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
