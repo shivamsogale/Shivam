@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivam Sogale - Shop</title>
+
+  <!-- DaisyUI + Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.4/dist/full.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cinzel -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #f5deb3;
+      font-family: 'Cinzel', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    #cart {
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    /* Scrollbar styling for cart */
+    #cart::-webkit-scrollbar {
+      width: 8px;
+    }
+    #cart::-webkit-scrollbar-thumb {
+      background-color: #8b0000;
+      border-radius: 4px;
+    }
+    /* Card hover */
+    article.card:hover {
+      box-shadow: 0 8px 20px rgba(255, 99, 71, 0.7);
+      transform: translateY(-4px);
+      transition: 0.3s ease;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    /* Modal style overrides */
+    .modal-box {
+      background-color: #2e2e2e;
+      color: #f5deb3;
+    }
+    .form-control label {
+      color: #f5deb3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="p-6 border-b border-[#8b0000] flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Shivam's Shop</h1>
+    <a href="index.html" class="btn btn-sm btn-outline text-[#f5deb3] border-[#8b0000] hover:bg-[#8b0000]">Back to Portfolio</a>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col lg:flex-row gap-6 p-6 max-w-7xl mx-auto flex-1">
+
+    <!-- Products Grid -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1">
+
+      <!-- RDR2 Products -->
+      <article class="card bg-[#320000b3] shadow-lg border border-[#8b0000] p-4 rounded-lg flex flex-col">
+        <img src="print.jpg" alt="RDR2 Art Print" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">RDR2 Art Print</h3>
+        <p class="flex-grow mb-4">High quality art print from Red Dead Redemption 2 inspired designs.</p>
+        <p class="font-bold mb-4">₹1,200</p>
+        <button class="btn btn-primary add-to-cart" data-id="rdr2-art" data-name="RDR2 Art Print" data-price="1200">Add to Cart</button>
+      </article>
+
+      <article class="card bg-[#320000b3] shadow-lg border border-[#8b0000] p-4 rounded-lg flex flex-col">
+        <img src="t.jpg" alt="RDR2 T-Shirt" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">RDR2 T-Shirt</h3>
+        <p class="flex-grow mb-4">Comfortable cotton t-shirt featuring iconic RDR2 graphics.</p>
+        <p class="font-bold mb-4">₹2,000</p>
+        <button class="btn btn-primary add-to-cart" data-id="rdr2-shirt" data-name="RDR2 T-Shirt" data-price="2000">Add to Cart</button>
+      </article>
+
+      <article class="card bg-[#320000b3] shadow-lg border border-[#8b0000] p-4 rounded-lg flex flex-col">
+        <img src="mug.jpg" alt="RDR2 Mug" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">RDR2 Mug</h3>
+        <p class="flex-grow mb-4">Ceramic mug perfect for your morning coffee, with RDR2 themed artwork.</p>
+        <p class="font-bold mb-4">₹950</p>
+        <button class="btn btn-primary add-to-cart" data-id="rdr2-mug" data-name="RDR2 Mug" data-price="950">Add to Cart</button>
+      </article>
+
+      <!-- Apple Products -->
+      <article class="card bg-[#111111b3] shadow-lg border border-[#444444] p-4 rounded-lg flex flex-col">
+        <img src="phone.jpg" alt="Apple iPhone 13 Pro Max" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">Apple iPhone 13 Pro Max</h3>
+        <p class="flex-grow mb-4">Latest iPhone with ProMotion, A15 Bionic chip, and stunning camera.</p>
+        <p class="font-bold mb-4">₹1,19,900</p>
+        <button class="btn btn-primary add-to-cart" data-id="apple-iphone-13" data-name="Apple iPhone 13 Pro Max" data-price="119900">Add to Cart</button>
+      </article>
+
+      <article class="card bg-[#111111b3] shadow-lg border border-[#444444] p-4 rounded-lg flex flex-col">
+        <img src="air.jpg" alt="Apple AirPods Pro" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">Apple AirPods Pro</h3>
+        <p class="flex-grow mb-4">Active noise cancellation earbuds with spatial audio support.</p>
+        <p class="font-bold mb-4">₹24,900</p>
+        <button class="btn btn-primary add-to-cart" data-id="apple-airpods-pro" data-name="Apple AirPods Pro" data-price="24900">Add to Cart</button>
+      </article>
+
+      <!-- Nike Products -->
+      <article class="card bg-[#222222b3] shadow-lg border border-[#555555] p-4 rounded-lg flex flex-col">
+        <img src="nike.jpg" alt="Nike Air Max 270" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">Nike Air Max 270</h3>
+        <p class="flex-grow mb-4">Modern, comfortable sneakers with air cushioning.</p>
+        <p class="font-bold mb-4">₹14,999</p>
+        <button class="btn btn-primary add-to-cart" data-id="nike-airmax-270" data-name="Nike Air Max 270" data-price="14999">Add to Cart</button>
+      </article>
+
+      <article class="card bg-[#222222b3] shadow-lg border border-[#555555] p-4 rounded-lg flex flex-col">
+        <img src="nike1.webp" alt="Nike Air Force 1" class="rounded mb-4 object-cover h-48 w-full" />
+        <h3 class="text-xl font-semibold mb-2">Nike Air Force 1</h3>
+        <p class="flex-grow mb-4">Classic basketball shoes with timeless style.</p>
+        <p class="font-bold mb-4">₹11,499</p>
+        <button class="btn btn-primary add-to-cart" data-id="nike-airforce-1" data-name="Nike Air Force 1" data-price="11499">Add to Cart</button>
+      </article>
+
+    </section>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart" class="w-full lg:w-96 bg-[#320000b3] p-6 rounded-lg border border-[#8b0000] sticky top-6 shadow-lg flex flex-col">
+      <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
+      <ul id="cartItems" class="divide-y divide-[#8b0000] mb-4 max-h-64 overflow-y-auto flex-grow"></ul>
+      <div class="font-bold text-lg mb-4">Total: ₹<span id="cartTotal">0.00</span></div>
+      <button id="clearCartBtn" class="btn btn-error btn-sm w-full mb-2">Clear Cart</button>
+      <label for="checkoutModal" class="btn btn-primary btn-sm w-full cursor-pointer" id="openCheckoutBtn" aria-disabled="true" tabindex="0" disabled>Checkout</label>
+    </aside>
+
+  </main>
+
+  <!-- Checkout Modal -->
+  <input type="checkbox" id="checkoutModal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box max-w-3xl p-6">
+      <h3 class="font-bold text-2xl mb-4" id="checkoutStepTitle">Review Your Cart</h3>
+
+      <!-- Checkout Steps -->
+      <form id="checkoutForm" class="space-y-6">
+
+        <!-- Step 1: Cart Review -->
+        <section class="checkout-step" data-step="1">
+          <ul id="checkoutCartItems" class="divide-y divide-[#8b0000] max-h-48 overflow-y-auto mb-4"></ul>
+          <div class="font-bold text-lg mb-4">Total: ₹<span id="checkoutCartTotal">0.00</span></div>
+          <p class="text-sm text-[#f5deb3]/80 mb-4">Please review your cart before proceeding.</p>
+          <button type="button" class="btn btn-primary w-full" id="toShippingBtn">Proceed to Shipping</button>
+        </section>
+
+        <!-- Step 2: Shipping Details -->
+        <section class="checkout-step hidden" data-step="2">
+          <div class="form-control">
+            <label class="label" for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="input input-bordered" placeholder="Your full name" required />
+          </div>
+          <div class="form-control">
+            <label class="label" for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="input input-bordered" placeholder="email@example.com" required />
+          </div>
+          <div class="form-control">
+            <label class="label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="input input-bordered" placeholder="+91 98765 43210" pattern="^\+?\d{7,15}$" required />
+          </div>
+          <div class="form-control">
+            <label class="label" for="address">Shipping Address</label>
+            <textarea id="address" name="address" rows="3" class="textarea textarea-bordered" placeholder="Street, City, State, PIN" required></textarea>
+          </div>
+          <div class="form-control">
+            <label class="label" for="deliveryOption">Delivery Option</label>
+            <select id="deliveryOption" name="deliveryOption" class="select select-bordered" required>
+              <option value="" disabled selected>Select delivery method</option>
+              <option value="standard">Standard (5-7 days) - Free</option>
+              <option value="express">Express (2-3 days) - ₹299</option>
+              <option value="pickup">Store Pickup - Free</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary w-full" id="toPaymentBtn">Proceed to Payment</button>
+          <button type="button" class="btn btn-outline w-full mt-2" id="backToCartBtn1">Back to Cart</button>
+        </section>
+
+        <!-- Step 3: Payment Details -->
+        <section class="checkout-step hidden" data-step="3">
+          <div class="form-control">
+            <label class="label" for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" class="select select-bordered" required>
+              <option value="" disabled selected>Select payment method</option>
+              <option value="creditcard">Credit / Debit Card</option>
+              <option value="upi">UPI</option>
+              <option value="cod">Cash on Delivery</option>
+            </select>
+          </div>
+
+          <!-- Credit Card Fields -->
+          <div id="cardDetails" class="hidden space-y-4">
+            <div class="form-control">
+              <label class="label" for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" name="cardNumber" class="input input-bordered" placeholder="1234 5678 9012 3456" pattern="[\d\s]{16,19}" />
+            </div>
+            <div class="form-control">
+              <label class="label" for="expiryDate">Expiry Date</label>
+              <input type="month" id="expiryDate" name="expiryDate" class="input input-bordered" />
+            </div>
+            <div class="form-control">
+              <label class="label" for="cvv">CVV</label>
+              <input type="password" id="cvv" name="cvv" class="input input-bordered" maxlength="4" pattern="\d{3,4}" />
+            </div>
+          </div>
+
+          <!-- UPI Field -->
+          <div id="upiDetails" class="hidden space-y-4">
+            <div class="form-control">
+              <label class="label" for="upiId">UPI ID</label>
+              <input type="text" id="upiId" name="upiId" class="input input-bordered" placeholder="example@upi" pattern="^[\w.-]+@[\w.-]+$" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full">Place Order</button>
+          <button type="button" class="btn btn-outline w-full mt-2" id="backToShippingBtn">Back to Shipping</button>
+        </section>
+
+        <!-- Step 4: Confirmation -->
+        <section class="checkout-step hidden" data-step="4">
+          <div class="text-center space-y-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-20 w-20 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2l4-4" />
+            </svg>
+            <h3 class="text-2xl font-bold">Thank you for your order!</h3>
+            <p>Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+            <label for="checkoutModal" class="btn btn-primary cursor-pointer">Close</label>
+          </div>
+        </section>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn" class="btn btn-secondary fixed bottom-6 right-6 rounded-full p-3 shadow-lg hidden" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <script>
+    (() => {
+      // Elements
+      const cartItemsEl = document.getElementById('cartItems');
+      const cartTotalEl = document.getElementById('cartTotal');
+      const clearCartBtn = document.getElementById('clearCartBtn');
+      const checkoutBtn = document.getElementById('openCheckoutBtn');
+      const checkoutModal = document.getElementById('checkoutModal');
+      const checkoutStepTitle = document.getElementById('checkoutStepTitle');
+      const checkoutForm = document.getElementById('checkoutForm');
+      const checkoutCartItemsEl = document.getElementById('checkoutCartItems');
+      const checkoutCartTotalEl = document.getElementById('checkoutCartTotal');
+      const toShippingBtn = document.getElementById('toShippingBtn');
+      const toPaymentBtn = document.getElementById('toPaymentBtn');
+      const backToCartBtn1 = document.getElementById('backToCartBtn1');
+      const backToShippingBtn = document.getElementById('backToShippingBtn');
+      const paymentMethodSelect = document.getElementById('paymentMethod');
+      const cardDetails = document.getElementById('cardDetails');
+      const upiDetails = document.getElementById('upiDetails');
+
+      // Scroll top button
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+      // Checkout Steps (sections)
+      const steps = [...checkoutForm.querySelectorAll('.checkout-step')];
+      let currentStep = 1;
+
+      // Cart Data: structure { id: { id, name, price, qty } }
+      let cart = {};
+
+      // Load cart from localStorage
+      function loadCart() {
+        const stored = localStorage.getItem('cart');
+        if (stored) {
+          try {
+            cart = JSON.parse(stored);
+          } catch {
+            cart = {};
+          }
+        }
+      }
+
+      // Save cart to localStorage
+      function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+
+      // Calculate total price
+      function calculateTotal() {
+        return Object.values(cart).reduce((sum, item) => sum + item.price * item.qty, 0);
+      }
+
+      // Render cart in sidebar and checkout
+      function renderCart() {
+        cartItemsEl.innerHTML = '';
+        checkoutCartItemsEl.innerHTML = '';
+
+        if (Object.keys(cart).length === 0) {
+          cartItemsEl.innerHTML = `<p class="text-center text-[#f5deb3]/80">Your cart is empty</p>`;
+          checkoutCartItemsEl.innerHTML = `<p class="text-center text-[#f5deb3]/80">Your cart is empty</p>`;
+          checkoutBtn.disabled = true;
+          checkoutBtn.setAttribute('aria-disabled', 'true');
+          cartTotalEl.textContent = '0.00';
+          checkoutCartTotalEl.textContent = '0.00';
+          return;
+        }
+
+        checkoutBtn.disabled = false;
+        checkoutBtn.removeAttribute('aria-disabled');
+
+        // Sidebar cart list
+        for (const id in cart) {
+          const item = cart[id];
+          const li = document.createElement('li');
+          li.className = "py-2 flex justify-between items-center";
+
+          li.innerHTML = `
+            <div>
+              <p class="font-semibold">${item.name}</p>
+              <p class="text-sm">₹${item.price} × ${item.qty}</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <button class="btn btn-xs btn-circle btn-outline text-[#f5deb3]" data-action="decrease" data-id="${id}" aria-label="Decrease quantity">-</button>
+              <span>${item.qty}</span>
+              <button class="btn btn-xs btn-circle btn-outline text-[#f5deb3]" data-action="increase" data-id="${id}" aria-label="Increase quantity">+</button>
+              <button class="btn btn-xs btn-circle btn-error" data-action="remove" data-id="${id}" aria-label="Remove item">×</button>
+            </div>
+          `;
+          cartItemsEl.appendChild(li);
+        }
+
+        // Checkout modal cart list
+        for (const id in cart) {
+          const item = cart[id];
+          const li = document.createElement('li');
+          li.className = "py-2 flex justify-between items-center";
+
+          li.innerHTML = `
+            <p>${item.name} (x${item.qty})</p>
+            <p>₹${(item.price * item.qty).toFixed(2)}</p>
+          `;
+          checkoutCartItemsEl.appendChild(li);
+        }
+
+        const total = calculateTotal();
+        cartTotalEl.textContent = total.toFixed(2);
+        checkoutCartTotalEl.textContent = total.toFixed(2);
+      }
+
+      // Add item to cart
+      function addToCart(id, name, price) {
+        if (cart[id]) {
+          cart[id].qty++;
+        } else {
+          cart[id] = { id, name, price, qty: 1 };
+        }
+        saveCart();
+        renderCart();
+      }
+
+      // Update quantity (increase/decrease)
+      function updateQuantity(id, delta) {
+        if (!cart[id]) return;
+        cart[id].qty += delta;
+        if (cart[id].qty < 1) {
+          delete cart[id];
+        }
+        saveCart();
+        renderCart();
+      }
+
+      // Remove item
+      function removeItem(id) {
+        if (!cart[id]) return;
+        delete cart[id];
+        saveCart();
+        renderCart();
+      }
+
+      // Clear entire cart
+      function clearCart() {
+        cart = {};
+        saveCart();
+        renderCart();
+      }
+
+      // Switch checkout steps
+      function showStep(step) {
+        currentStep = step;
+        steps.forEach((sec) => {
+          sec.classList.toggle('hidden', Number(sec.dataset.step) !== step);
+        });
+        // Update title
+        let titles = {
+          1: 'Review Your Cart',
+          2: 'Shipping Details',
+          3: 'Payment Details',
+          4: 'Order Confirmed',
+        };
+        checkoutStepTitle.textContent = titles[step];
+      }
+
+      // Validate shipping form
+      function validateShipping() {
+        return checkoutForm.fullName.checkValidity() &&
+               checkoutForm.email.checkValidity() &&
+               checkoutForm.phone.checkValidity() &&
+               checkoutForm.address.checkValidity() &&
+               checkoutForm.deliveryOption.checkValidity();
+      }
+
+      // Validate payment form based on method
+      function validatePayment() {
+        const method = paymentMethodSelect.value;
+        if (!method) return false;
+
+        if (method === 'creditcard') {
+          return checkoutForm.cardNumber.checkValidity() &&
+                 checkoutForm.expiryDate.checkValidity() &&
+                 checkoutForm.cvv.checkValidity();
+        } else if (method === 'upi') {
+          return checkoutForm.upiId.checkValidity();
+        } else if (method === 'cod') {
+          return true;
+        }
+        return false;
+      }
+
+      // Show/hide payment fields based on payment method
+      function updatePaymentFields() {
+        const method = paymentMethodSelect.value;
+        cardDetails.classList.toggle('hidden', method !== 'creditcard');
+        upiDetails.classList.toggle('hidden', method !== 'upi');
+      }
+
+      // Initialize event listeners
+      function initListeners() {
+        // Add to cart buttons
+        document.querySelectorAll('.add-to-cart').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            const name = btn.dataset.name;
+            const price = Number(btn.dataset.price);
+            addToCart(id, name, price);
+          });
+        });
+
+        // Cart sidebar actions (delegation)
+        cartItemsEl.addEventListener('click', (e) => {
+          if (e.target.matches('button[data-action]')) {
+            const action = e.target.dataset.action;
+            const id = e.target.dataset.id;
+            if (action === 'increase') updateQuantity(id, +1);
+            else if (action === 'decrease') updateQuantity(id, -1);
+            else if (action === 'remove') removeItem(id);
+          }
+        });
+
+        // Clear cart button
+        clearCartBtn.addEventListener('click', () => {
+          if (confirm('Are you sure you want to clear your cart?')) {
+            clearCart();
+          }
+        });
+
+        // Checkout button opens modal, reset to step 1
+        checkoutBtn.addEventListener('click', () => {
+          if (Object.keys(cart).length === 0) return;
+          showStep(1);
+          // Fill checkout cart list
+          renderCart();
+          checkoutForm.reset();
+          paymentMethodSelect.value = '';
+          updatePaymentFields();
+        });
+
+        // Proceed to shipping from step 1
+        toShippingBtn.addEventListener('click', () => {
+          if (Object.keys(cart).length === 0) {
+            alert('Your cart is empty!');
+            return;
+          }
+          showStep(2);
+        });
+
+        // Back to cart from shipping
+        backToCartBtn1.addEventListener('click', () => {
+          showStep(1);
+        });
+
+        // Proceed to payment from shipping
+        toPaymentBtn.addEventListener('click', () => {
+          if (!validateShipping()) {
+            alert('Please fill all required shipping details correctly.');
+            return;
+          }
+          showStep(3);
+        });
+
+        // Back to shipping from payment
+        backToShippingBtn.addEventListener('click', () => {
+          showStep(2);
+        });
+
+        // Payment method change toggles fields
+        paymentMethodSelect.addEventListener('change', () => {
+          updatePaymentFields();
+        });
+
+        // Submit order (final)
+        checkoutForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (!validatePayment()) {
+            alert('Please fill payment details correctly.');
+            return;
+          }
+          // Simulate order processing delay
+          setTimeout(() => {
+            // Clear cart
+            clearCart();
+            showStep(4);
+          }, 1000);
+        });
+
+        // Scroll top button show/hide & action
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            scrollTopBtn.classList.remove('hidden');
+          } else {
+            scrollTopBtn.classList.add('hidden');
+          }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Init
+      loadCart();
+      renderCart();
+      initListeners();
+      updatePaymentFields();
+      showStep(1);
+    })();
+  </script>
+</body>
+</html>
