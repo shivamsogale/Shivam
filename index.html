@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shivam Sogale's RDR2-inspired portfolio homepage" />
+  <meta name="theme-color" content="#000000" />
+  <title>Shivam Sogale - Home</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Cinzel Decorative', serif;
+      background-image: url('https://images6.alphacoders.com/101/1018194.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #FFD95B;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 6px #b06e00;
+    }
+    @media (min-width: 640px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    p.subtitle {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 3px #b06e00;
+    }
+    img.profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 9999px;
+      border: 5px solid #b47f00;
+      object-fit: cover;
+      box-shadow: 0 0 15px 5px rgba(202,138,4,0.85);
+      margin-bottom: 2rem;
+      transition: transform 0.4s ease;
+    }
+    @media (min-width: 640px) {
+      img.profile-photo {
+        width: 220px;
+        height: 220px;
+      }
+    }
+    img.profile-photo:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 0 25px 8px rgba(255, 217, 91, 1);
+    }
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 340px;
+      margin-bottom: 2.5rem;
+    }
+    a.host-link {
+      color: #facc15;
+      font-weight: 700;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    a.host-link:hover {
+      color: #d97706;
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Shivam Sogale</h1>
+    <p class="subtitle">RDR2 Inspired Portfolio</p>
+    <img
+      class="profile-photo"
+      src="shivam.jpg" 
+      alt="Shivam Sogale Photo"
+      loading="lazy"
+    />
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:shivamsogale@gmail.com" class="host-link">shivamsogale@sogale.com</a></p>
+      <p><strong>Phone:</strong> +91 7448002268</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/shivamsogale" target="_blank" rel="noopener" class="host-link">github.com/shivamsogale</a></p>
+    </div>
+
+    <!-- Day Buttons -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10 w-full px-4">
+      <a href="day1.html" class="btn btn-warning text-lg shadow-md w-full">Day 1</a>
+      <a href="day2.html" class="btn btn-warning text-lg shadow-md w-full">Day 2</a>
+      <a href="day3.html" class="btn btn-warning text-lg shadow-md w-full">Day 3</a>
+      <a href="day4.html" class="btn btn-warning text-lg shadow-md w-full">Day 4</a>
+    </section>
+
+    <footer>© 2025 Shivam Sogale | RDR2 Themed Portfolio</footer>
+  </div>
+</body>
+</html>
